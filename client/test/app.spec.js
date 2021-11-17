@@ -1,3 +1,7 @@
+/**
+ * @jest-environment jsdom
+ */
+
 const fs = require('fs');
 const path = require('path');
 const html = fs.readFileSync(path.resolve(__dirname, '../static/index.html'), 'utf8');
@@ -29,7 +33,7 @@ describe('index.html', () => {
             })
 
             test('it does something', () => {
-                expect(button.textContent.toLowerCase()).toContain('submit')
+                expect(button.textContent.toLowerCase()).toContain('search')
             })
 
         })
@@ -57,9 +61,6 @@ describe('index.html', () => {
                     expect(searchbar.getAttribute('type')).toBe('text')
                 })
         
-                test('it has a label"', () => {
-                    expect(document.querySelector('[for="name"]')).toBeTruthy();
-                })
             })
 
            
