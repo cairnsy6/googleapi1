@@ -5,10 +5,10 @@ const lucky = document.getElementById('lucky');
 const resultsArea = document.querySelector('#results');
 // const randLink = document.getElementById('randLink');
 
-function pageLoad(){
+async function pageLoad(){
     resultsArea.textContent = "";
     const url = "http://localhost:4000/results"
-    fetch(url)
+    await fetch(url)
     .then(res => res.json())
     .then(results => {
         const num = Math.floor(Math.random() * results.length);
